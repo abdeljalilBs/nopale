@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivoire: #FFFEEB;
+  --color-bleuElectrique: #1800AD;
+  --color-bleu-electrique: #1800AD;
+  --color-encre: #171717;
+  --color-encreLight: #262626;
+  --color-encre-light: #262626;
+  --font-sans: var(--font-inter), sans-serif;
+  --max-width-container: 1440px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivoire);
+  color: var(--color-encre);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-bleuElectrique);
+  color: var(--color-ivoire);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Effet de verre pour la navbar */
+.glass-nav {
+  background-color: color-mix(in srgb, var(--color-encre) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ivoire) 10%, transparent);
+}
+
+/* Animation signature */
+.animate-signature {
+  animation: signature 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes signature {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Animation de révélation subtile (400ms, 12px) */
+.animate-reveal {
+  animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
